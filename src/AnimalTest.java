@@ -26,12 +26,22 @@ public class AnimalTest
     {
         // Use the default constructor
         Animal animal = new Animal("White","Joy",180.0, 144.0);
+        Animal animal2 = new Animal("White","Joy",180.0, 144.0);
 
-        // The name should be "noname", color "unknown", height and weight 0.
+        // The name should be "Joy", color "White", height 144.0, and weight 180.0.
         Assert.assertEquals("White", animal.getColor());
         Assert.assertEquals("Joy", animal.getName());
         Assert.assertEquals(144.0, animal.getHeight(), 0.01);
         Assert.assertEquals(180.0, animal.getWeight(), 0.01);
+        Assert.assertEquals(false, animal.equals(animal2));
     }
+	
+	public void toStringTest() throws AssertException
+	{	
+		// Use constructor
+		Animal animal = new Animal("White","Joy",180.0, 144.0);
+		
+		Assert.assertEquals("Joy, a White-colored animal. 180.0 pounds, 144.0 inches\n", animal.toString());
+	}
 }
 
