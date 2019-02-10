@@ -140,8 +140,8 @@ public class Animal
 
         // Check that all fields match (color, name, weight, height):
         
-        boolean sameColor = this.getColor().equals(otherAni.getName());
-        boolean sameName = this.getName().equals(otherAni.getName());
+        boolean sameColor = this.getColor().equalsIgnoreCase(otherAni.getColor());
+        boolean sameName = this.getName().equalsIgnoreCase(otherAni.getName());
         boolean sameWeight = this.getWeight() == otherAni.getWeight();
         boolean sameHeight = this.getHeight() == otherAni.getHeight();
         

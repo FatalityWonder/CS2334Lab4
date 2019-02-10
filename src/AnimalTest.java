@@ -33,7 +33,7 @@ public class AnimalTest
         Assert.assertEquals("Joy", animal.getName());
         Assert.assertEquals(144.0, animal.getHeight(), 0.01);
         Assert.assertEquals(180.0, animal.getWeight(), 0.01);
-        Assert.assertEquals(false, animal.equals(animal2));
+        Assert.assertEquals(true, animal.equals(animal2));
     }
 	
 	public void toStringTest() throws AssertException
@@ -41,7 +41,16 @@ public class AnimalTest
 		// Use constructor
 		Animal animal = new Animal("White","Joy",180.0, 144.0);
 		
+		// test toString()
 		Assert.assertEquals("Joy, a White-colored animal. 180.0 pounds, 144.0 inches\n", animal.toString());
+	}
+	
+	public void equalsTest() throws AssertException
+	{
+		Animal animal = new Animal();
+		Object animal2 = animal;
+		
+		Assert.assertEquals(true, animal.equals(animal2));
 	}
 }
 
